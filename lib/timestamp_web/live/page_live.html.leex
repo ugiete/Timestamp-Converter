@@ -1,0 +1,40 @@
+<section class="phx-hero">
+  <h1>Timestamp &#8644 DateTime</h1>
+  <p>UNIX timestamp to human readable date time converter, and vice versa</p>
+
+  <form phx-submit="convert">
+    <label for="timestamp">UNIX Timestamp</label>
+    <input type="number" name="timestamp" value="<%= @timestamp %>" placeholder="UNIX Timestamp" autocomplete="off"/>
+
+    <label for="datetime">Readable Date Time</label>
+    <input type="text" name="datetime" placeholder="dd/MM/yyyy hh:mm:ss GMT" value="<%= @datetime %>" placeholder="Date Time" autocomplete="off"/>
+
+    <button type="submit">Convert</button>
+    <button type="button" phx-click="clear">Clear</button>
+  </form>
+
+  <p>If both <strong>Timestamp</strong> and <strong>Datetime</strong> were given, timestamp to datetime will have preference in convertion!</p>
+
+  <section id="api-ref">
+    <h2>API reference</h2>
+    <p>If you prefer to use our REST API</p>
+    <ul>
+      <li>Timestamp &#8594 Date Time
+        <ul>
+          <li><a href="http://localhost:4000/api/ts/824854020000">/api/ts/:timestamp</a></li></li>
+          <li>:timestamp = integer</li>
+        </ul>
+      <li>Date Time &#8594 Timestamp</li>
+        <ul>
+          <li><a href="http://localhost:4000/api/dt/20-02-1996T22:07:00">/api/ts/:datetime</a></li></li>
+          <li>:datetime = <spam class="param">dd-MM-yyyy</spam>T<spam class="param">hh:mm:ss</spam></li>
+        </ul>
+      <li>Now</li>
+        <ul>
+          <li><a href="http://localhost:4000/api/now">/api/now</a></li></li>
+        </ul>
+    </ul>
+  </section>
+
+  <p>Coded by <a href="https://github.com/ugiete">Leonardo Ugiete</a> available at <a href="https://github.com/ugiete">github</a></p>
+</section>

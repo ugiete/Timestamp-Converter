@@ -138,7 +138,7 @@ defmodule Timestamp.Converter do
     end
   end
 
-  defp build_response(%{status: false}, :timestamp), do: %{utc: "Invalid Date"}
+  defp build_response(%{status: false}, :timestamp), do: %{error: "Invalid Timestamp"}
 
   defp build_response(context, :timestamp) do
     %{
@@ -147,7 +147,7 @@ defmodule Timestamp.Converter do
     }
   end
 
-  defp build_response(%{status: false}, :datetime), do: %{utc: "Invalid Time"}
+  defp build_response(%{status: false}, :datetime), do: %{error: "Invalid Date"}
 
   defp build_response(context, :datetime) do
     %{
